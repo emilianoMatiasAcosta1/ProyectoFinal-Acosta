@@ -1,0 +1,29 @@
+{% extends "ClubDelLibro/base.html"  %}
+
+{% load static %}
+
+{% block main %}
+<main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ejemplo de álbum</font></font></h1>
+          <p class="lead text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Algo breve y principal sobre la colección a continuación: su contenido, el creador, etc. Hágalo breve y atractivo, pero no demasiado breve para que la gente no se lo salte por completo.</font></font></p>
+          <p>
+            <a href="https://getbootstrap.com/docs/5.3/examples/album/#" class="btn btn-primary my-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Llamada a la acción principal</font></font></a>
+            <a href="https://getbootstrap.com/docs/5.3/examples/album/#" class="btn btn-secondary my-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Acción secundaria</font></font></a>
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-light">
+      <div class="container">
+  
+        {% block postales %} {% endblock %}
+      </div>
+    </div>
+  
+  </main>
+  {% endblock %}
