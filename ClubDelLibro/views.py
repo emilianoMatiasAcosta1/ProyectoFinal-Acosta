@@ -41,7 +41,7 @@ class BibliotecaDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         user_id = self.request.user.id
         biblioteca_id =  self.kwargs.get("pk")
-        return Biblioteca.objects.filter(book=user_id, id=Biblioteca_id).exists()
+        return Biblioteca.objects.filter(book=user_id, id=biblioteca_id).exists()
 
 
 class BibliotecaCreate(LoginRequiredMixin, CreateView):
