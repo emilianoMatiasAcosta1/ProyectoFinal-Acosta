@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ClubDelLibro.views import index, BibliotecaList, BibliotecaMineList, BibliotecaUpdate, BibliotecaDelete 
+from ClubDelLibro.views import (index, BibliotecaList, BibliotecaMineList, BibliotecaUpdate, 
+                                       BibliotecaDelete, BibliotecaCreate,  Login, Logout, SignUp)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,8 +26,13 @@ urlpatterns = [
     path("biblioteca/list", BibliotecaList.as_view(), name="biblioteca-list"),
     path ("biblioteca/list", BibliotecaMineList.as_view(), name="biblioteca-mine"),
     path ("biblioteca/<pk>/update", BibliotecaUpdate.as_view(), name="biblioteca-update"),
-    path ("biblioteca/<pk>/delete", BibliotecaDelete.as_view(), name="biblioteca-delete")
+    path ("biblioteca/<pk>/delete", BibliotecaDelete.as_view(), name="biblioteca-delete"),
+    path ("biblioteca/create", BibliotecaCreate.as_view(), name="biblioteca-create"),
+    path("login/", Login.as_view(), name="login"),
+    path("logout/", Logout.as_view(), name="logout"),
+    path("signup/", SignUp.as_view(), name="signup")
 ]
+
 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

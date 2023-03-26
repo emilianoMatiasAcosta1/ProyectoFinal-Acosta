@@ -46,7 +46,7 @@ class BibliotecaDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class BibliotecaCreate(LoginRequiredMixin, CreateView):
     model = Biblioteca
-    success_url = reverse_lazy("biblioteca-list")
+    success_url = reverse_lazy("biblioteca-create")
     fields = '__all__'
 
 
@@ -60,14 +60,15 @@ class BibliotecaSearch(ListView):
         return result
 
 class Login(LoginView):
-    next_page = reverse_lazy("index")
+    next_page = reverse_lazy("biblioteca-list")
+    
 
 
 class SignUp(CreateView):
     form_class = UserCreationForm
     template_name = 'registration/signup.html'
     success_url = reverse_lazy('biblioteca-list')
-
+    
 
 class Logout(LogoutView):
     template_name = "registration/logout.html"

@@ -127,4 +127,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = str(Path(BASE_DIR) / 'media')
 MEDIA_URL = 'media/'
 
-LOGIN_URL = "biblioteca-mine"
+LOGIN_URL = "biblioteca-list"
