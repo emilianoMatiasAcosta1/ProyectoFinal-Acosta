@@ -21,27 +21,29 @@ class BibliotecaMineList(LoginRequiredMixin, BibliotecaList):
 
 
 
-class BibliotecaUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = Biblioteca
-    success_url = reverse_lazy("biblioteca-list")
-    fields = '__all__'
-
-
+class PermisoBibliotecario(UserPassesTestMixin):
     def test_func(self):
         user_id = self.request.user.id
         biblioteca_id =  self.kwargs.get("pk")  
         return Biblioteca.objects.filter(book=user_id, id=biblioteca_id).exists()
 
 
-class BibliotecaDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+
+class BibliotecaUpdate(LoginRequiredMixin, PermisoBibliotecario, UpdateView):
+    model = Biblioteca
+    success_url = reverse_lazy("biblioteca-list")
+    fields = '__all__'
+
+
+    
+
+class BibliotecaDelete(LoginRequiredMixin, PermisoBibliotecario, DeleteView):
     model = Biblioteca
     context_object_name = "Biblioteca"
     success_url = reverse_lazy("biblioteca-list")
 
-    def test_func(self):
-        user_id = self.request.user.id
-        biblioteca_id =  self.kwargs.get("pk")
-        return Biblioteca.objects.filter(book=user_id, id=biblioteca_id).exists()
+    
 
 
 class BibliotecaCreate(LoginRequiredMixin, CreateView):
