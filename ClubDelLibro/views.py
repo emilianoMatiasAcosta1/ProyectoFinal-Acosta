@@ -74,3 +74,7 @@ class Logout(LogoutView):
     template_name = "registration/logout.html"
 
 
+def Historia(request):
+    return render(request, "ClubDelLibro/biblioteca_historia.html")  
+
+
