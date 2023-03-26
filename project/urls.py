@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ClubDelLibro.views import index, BibliotecaList, BibliotecaMineList, BibliotecaUpdate 
+from ClubDelLibro.views import index, BibliotecaList, BibliotecaMineList, BibliotecaUpdate, BibliotecaDelete 
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,7 +24,8 @@ urlpatterns = [
     path("", index, name="index"),
     path("biblioteca/list", BibliotecaList.as_view(), name="biblioteca-list"),
     path ("biblioteca/list", BibliotecaMineList.as_view(), name="biblioteca-mine"),
-    path ("biblioteca/<pk>/update", BibliotecaUpdate.as_view(), name="biblioteca-update")
+    path ("biblioteca/<pk>/update", BibliotecaUpdate.as_view(), name="biblioteca-update"),
+    path ("biblioteca/<pk>/delete", BibliotecaDelete.as_view(), name="biblioteca-delete")
 ]
 
 
