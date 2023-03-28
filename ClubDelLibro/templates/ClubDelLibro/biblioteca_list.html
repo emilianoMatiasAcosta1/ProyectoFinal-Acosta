@@ -6,8 +6,22 @@
 
 {% block  postales %}
 
+<ul>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    {%  if not Bibliotecas %}
+   
+    <h3>Todavia no se realizo niguna recomendacion</h3>
+    <p>Se el primero en realizarla</p>  
+    
+    <p>
+        <a href="{% url "biblioteca-create" %}" class="btn btn-primary my-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MI PRIMER RECOMENDACION</font></font></a>
+        
+      </p>
+    
+    {% endif %}
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
   
 
 
@@ -33,6 +47,7 @@
         </div>
     {% endfor %}
   </div>
+</ul>
 
 
 
