@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from ClubDelLibro.views import (index, BibliotecaList, BibliotecaMineList, BibliotecaUpdate, 
 BibliotecaDelete, BibliotecaCreate,  Login, Logout, SignUp, Historia, ProfileCreate, ProfileUpdate,
-MensajeCreate, MensajeDelete, MensajeList
+MensajeCreate, MensajeDelete, MensajeList, SinDetalles,
 )
 from django.conf import settings
 from django.conf.urls.static import static
@@ -39,7 +39,8 @@ urlpatterns = [
     path('mensaje/list', MensajeList.as_view(), name="mensaje-list" ),
     path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create" ),
     path('mensaje/<pk>/delete', MensajeDelete.as_view(), name="mensaje-delete"),
-]
+    path("biblioteca/sindetalles", SinDetalles, name="biblioteca-sindetalles")
+   ]
 
 
 

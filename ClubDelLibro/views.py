@@ -121,7 +121,20 @@ class MensajeList(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         import pdb; pdb.set_trace
-        return Mensaje.objects.filter(destinatario=self.request.user).all()    
+        return Mensaje.objects.filter(destinatario=self.request.user).all()
+    
+
+
+
+def SinDetalles(request):
+    return render(request, "ClubDelLibro/sin_detalles.html")     
+
+
+    
+
+
+
+
 
          
         

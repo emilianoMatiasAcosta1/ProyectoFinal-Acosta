@@ -7,6 +7,10 @@ class Biblioteca(models.Model):
     descripcion = models.TextField(max_length=500)
     imagen = models.ImageField(upload_to="estanteria", null=True, blank=True)
     book = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="book")
+    creado_el = models.DateTimeField(auto_now_add=True)
+    detalle = models.CharField(max_length=100)
+  
+    
     
     
 
