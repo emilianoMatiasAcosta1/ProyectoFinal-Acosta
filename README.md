@@ -4,7 +4,8 @@
 - branch La app cuenta con una bara de inicio donde tenemos los siguientes elementos
 - Si no estamos logeados:
 - En primer lugar esta el nombre del proyecto LIBROTECA, que al usuario crear un perfil sera la foto de portada
-- En biblioteca encontraremos la lista con todas las recomendaciones realizadas hasta ahora 
+- En biblioteca encontraremos la lista con todas las recomendaciones realizadas hasta ahora
+- Las recomendacion tiene titulo del libro, autor, genero, una breve descipcion, fecha de publicacion y una foto en referencia al libro
 - En el caso que no existas publicaciones se mostrara el mensaje correspondiente. Y un boton para poder crear nuestro primera recomendacion 
 - Luego enviar mensaje (con un enlace a una pagina con el formulario correspondiente ) para interactuar con los usuarios 
 - Login , para inciar sesion 
